@@ -6,12 +6,19 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
+  const handleReload = () => {
+    window.location.reload(); // reload lại trang khi được nhấn
+  };
+
   return (
     <div className="navbar">
-      <div className="nav_logo">
-        <img src={logo} alt="" />
-        <p>SHOPPER</p>
-      </div>
+      <a href="/" onClick={handleReload}>
+        <div className="nav_logo">
+          <img src={logo} alt="" />
+          <p>SHOPPER</p>
+        </div>
+      </a>
+
       <ul className="nav_menu">
         <li
           onClick={() => {
